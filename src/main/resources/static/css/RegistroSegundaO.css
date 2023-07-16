@@ -1,0 +1,243 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-1: rgba(10, 52, 68, 0.877);
+    --color-bg-2: rgba(229, 180, 248, 0.89);
+    --color-btn: #e3b9f8;
+    --color-header-step: #9e75d3;
+    --color-shadow: #222;
+    --color-border-input: #ddd;
+}
+
+/* Contenedor principal */
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'poppins', sans-serif;
+    background-image: linear-gradient(var(--color-bg-1), var(--color-bg-2));
+    overflow: hidden;
+}
+
+/* Formulario */
+.form-register {
+    padding: 20px 15px;
+    width: 110%;
+    max-width: 500px;
+    align-items: center;
+    margin-left: -120px;
+   
+}
+
+/* Header del formulario */
+
+/* Progressbar */
+.progressbar {
+    display: flex;
+    list-style: none;
+    margin-bottom: 25px;
+    counter-reset: step;
+    margin-left: 80px;
+}
+
+
+/* Progressbar palabras*/
+.progressbar__option {
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+}
+
+/* Progressbar cuadrados*/
+.progressbar__option:before {
+    display: flex;
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    height: 25px;
+    color: #333;
+    background-color: rgb(253, 251, 251);
+    margin: 0 auto 0;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Progressbar cuadrados*/
+.progressbar__option:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: -50%;
+    z-index: 1;
+}
+
+.progressbar__option:first-child:after {
+    content: none;
+}
+
+.progressbar__option.active:before,
+.progressbar__option.active:after {
+    background-color: var(--color-header-step);
+}
+
+/* formato del titulo */
+.form-register__title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: fff;
+    font-family: 'poppins', sans-serif;
+}
+
+h1 {
+    color: #fff;
+    position: relative;
+    text-align: center;
+    margin: 50px auto;
+    font-family: 'poppins', sans-serif;
+    font-size: 45px;
+    margin-left: 80px;
+}
+
+/* formato del cuerpo*/
+.form-register__body {
+    display: flex;
+}
+
+/* formato de cada paso */
+.step {
+    background-color: white;
+    border: 0 none;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    height: 80%;
+    margin: 0 10%;
+    border-radius: 3px;
+    min-width: 100%;
+    opacity: 0;
+    transition: all .2s linear;
+    position: relative;
+}
+
+.step.active {
+    opacity: 1;
+    align-items: center;
+}
+
+.step.to-left {
+    margin-left: -110%;
+    align-items: center;
+}
+
+.step.inactive {
+    animation-name: scale;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    align-items: center;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* fondo titulos de cada paso*/
+.step__header {
+    padding: 8px 10px;
+    background-color: var(--color-header-step);
+    border-radius: 3px 3px 0 0;
+}
+
+/* letra titulos de cada paso*/
+.step__title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+/* fondo de cada paso*/
+.step__body {
+    padding: 20px 15px 0;
+    background-attachment: fixed;
+    font-family: 'poppins', sans-serif;
+    border: 0 none;
+}
+
+/* step inputs */
+.step__input,
+select {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border-input);
+    box-sizing: border-box;
+    font-family: 'poppins',
+        sans-serif;
+    color: #6f7780;
+    font-size: 15px;
+
+}
+
+label {
+    display: block;
+    width: 100%;
+    font-family: 'poppins',
+        sans-serif;
+    color: #6f7780;
+    text-align: center;
+
+}
+
+/* pie de pagina */
+.step__footer {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+/* step botones */
+.step__button {
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--color-header-step);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.step__button:hover,
+.step__button:focus {
+    background-color: transparent;
+    border: 2px solid var(--color-header-step);
+    color: var(--color-header-step);
+}

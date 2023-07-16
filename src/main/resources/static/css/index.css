@@ -1,0 +1,496 @@
+*{
+box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'poppins', sans-serif;
+    }
+    
+
+
+
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+ margin: 0;
+
+}
+
+
+nav{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #5c6aac;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    
+    
+    }
+    
+    .logo{
+    
+    width: 160px;
+    margin-right:45px ;
+    
+    
+    }
+    
+    .nav-left, .nav-right{
+    
+        display: flex;
+    align-items: center;
+    
+    }
+    
+    
+    .nav-left ul li{
+    
+    list-style: none;
+    display:inline-block;
+    }
+    
+
+h1{font-size: 3.5em;}
+h2{font-size: 2.7em;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+ul{list-style:none}
+li{font-size: 1.25em;}
+
+button{
+    font-size: 1.5em;
+font-weight: bold;
+padding: 10px 25px ;
+border-radius: 15px;
+border:1px solid rgba(0,0,0,0.5);
+box-shadow: 2px 2px 10px  rgba(0,0,0,0.5) ;
+color: white;
+background-color: blueviolet;
+
+}
+
+button:hover{
+    background-color: rgb(35, 11, 58);
+}
+
+.container{
+    max-width: 1400px;
+margin: auto;
+
+}
+.color-acento{
+    color: #71C9CE;
+}
+header{
+    background-color: rgb(245,245,245);
+}
+ .logo{
+
+    width: 160px;
+    margin-right:45px ;
+    
+}
+
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0 ;
+}
+
+
+ nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #71C9CE;
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100
+ }
+
+nav a{
+padding: 8px 10px ;
+text-decoration: none;
+font-weight: bold;
+color: black;
+text-align: center;
+}
+  a:hover{
+    color:blueviolet;  
+ }
+
+ 
+.logo{
+
+    width: 160px;
+    margin-right:45px ;
+    
+    
+    }
+    
+    .nav-left{
+    
+        display: flex;
+    align-items: center;
+    
+    }
+    
+    
+    .nav-left ul li{
+    
+    list-style: none;
+    display:inline-block;
+    }
+    
+    
+
+ #hero{
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+flex-direction: column; 
+height: 90vh;
+color: white;
+background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+
+) 
+,url("curriculum-vitae-resume-job-application-concept.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center ;
+
+}
+
+#hero h1{
+    color:white;
+
+}
+#hero button{
+    font-size: 1.75em;
+}
+#Somos-job-solutions{
+
+}
+#Somos-job-solutions .container{
+text-align: center;
+ padding: 200px 12px;
+
+
+}
+
+
+#nuestrosprogramas{
+    background-color: rgb(30,30,30);
+    color:white;
+    text-align: center;
+}
+
+#nuestrosprogramas .container{
+    padding: 100px 0px;
+}
+
+#nuestrosprogramas h2{
+    margin-top: 0px;
+    font-size: 3.2em;
+
+}
+
+    #nuestrosprogramas p{
+
+display:none;
+
+}
+
+
+#nuestrosprogramas .carta{
+background-position: center center ;
+background-size: cover ;
+padding: 50px;
+margin:20px;
+border-radius: 15px;
+
+}
+
+.carta:first-child{
+
+    background-image: linear-gradient(     
+         0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url("rayi-christian-wicaksono-6PF6DaiWz48-unsplash.jpg");
+}
+
+
+.carta:nth-child(2){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    
+    ) 
+    ,url("sigmund-Fv2J-aK0Acs-unsplash.jpg");
+}
+
+
+.carta:nth-child(3){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    
+    ) 
+    ,url("charlesdeluvio-AT5vuPoi8vc-unsplash.jpg");
+}
+
+
+
+#caracteristicas .container{
+text-align: center ;
+padding: 250px 12px ;
+}
+
+
+
+#caracteristicas li{
+    margin: 16px 0px ;
+font-weight: bold;
+
+    }
+
+#final{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align:center;
+  background-color: rgb(30,30,30);  
+color:white;
+height: 80vh;
+
+}
+
+#final h2{
+    font-size: 7vw;
+}
+
+#final button{
+    font-size: 3vw;
+
+
+}
+
+
+
+footer{
+    background-color: rgb(233, 230, 230);
+}
+footer p{
+
+    margin:0;
+    padding: 12px ;
+color: rgb(100,100,100);
+
+}
+
+footer .container{
+   height: 150px;
+display:flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+@media (min-width:720px){
+    
+    header{
+     position:fixed ;
+     width: 100%;
+    
+    }
+
+header .container{
+    flex-direction:row ;
+justify-content: space-between;
+}
+header nav{
+    flex-direction: row;
+    padding-bottom: 0;
+padding-right: 20px;
+}
+
+#hero h1{
+    font-size: 5em;
+
+}
+
+#Somos-job-solutions .container{
+display: flex;
+justify-content:space-evenly;
+}
+
+
+#Somos-job-solutions .texto{
+    max-width: 600px;
+    width: 50%;
+    text-align:initial ;
+   padding-left:30px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+#Somos-job-solutions .img-container{
+background-image:url(4976768.jpg);
+background-size: cover;
+background-position: center center ;
+height: 500px;
+width: 400px;
+}
+
+#Somos-job-solutions h2{
+    margin-top: 0px;
+
+}
+
+#nuestrosprogramas .programas{
+display: flex;
+justify-content: center ;
+
+}
+
+
+#nuestrosprogramas p{
+    display: block;
+    margin-bottom: 30px;
+    
+}
+#nuestrosprogramas h2{
+font-size:4em ;
+}
+#nuestrosprogramas h3{
+    margin-top: 0;
+
+}
+
+#nuestrosprogramas .carta{
+    padding: 50px;
+background-size: 100% 150px;
+background-repeat: no-repeat;
+background-position-y: 0 ;
+background-color: rgb(50,50,50,0.5);
+box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
+
+}
+
+
+.carta:first-child{
+
+    background-image: linear-gradient(     
+         0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url("rayi-christian-wicaksono-6PF6DaiWz48-unsplash.jpg");
+}
+
+
+.carta:nth-child(2){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    
+    ) 
+    ,url("sigmund-Fv2J-aK0Acs-unsplash.jpg");
+}
+
+
+.carta:nth-child(3){
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    
+    ) 
+    ,url("charlesdeluvio-AT5vuPoi8vc-unsplash.jpg");
+}
+
+
+
+
+
+#caracteristicas {
+background-image: url(happy-customer-service-representative-with-headset-communicating-with-customer-while-working-at-call-center.jpg);
+background-repeat:no-repeat;
+background-size: 400px 400px;
+background-position:calc(100vw - 500px) 120px ; 
+
+}
+
+
+#caracteristicas .container{
+
+text-align: initial;
+}
+
+
+
+#caracteristicas ul{
+    margin-left: 100px;
+
+
+
+
+}
+
+
+#final h2{
+font-size:5em;
+
+} 
+#final button[
+    font-size: 2em;
+]
+
+
+footer .container{    
+justify-content:flex-end;
+}
+
+}
+
+@media(min-width:1200px){
+#caracteristicas{
+    background-position-x:calc(100vw-800px) ;
+}
+
+
+
+
+
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/publi.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <title>Portal de Empleo</title>
+
+    </head>
+
+
+    <body>
+
+        <nav>
+            <div class="nav-left">
+                <img src="css/logoUltimo.png" class="logo">
+                <ul>
+
+                    <li><img src="css/bell.png"></li>
+                    <li><img src="css/inbox.png"></li>
+                    <li><img src="css/video.png"></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <img src="css/loupe.png">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+                    <img class="img-fluid rounded-circle" th:src="${'/foto/usuario/'+ session.usuariosession.id}" alt="">
+
+
+                </div>
+            </div>
+
+            <!--------settings-menu--------->
+
+            <div class="settings-menu">
+
+
+                <div id="dark-btn">
+                    <span>
+
+
+                    </span>
+                </div>
+
+                <div class="settings-menu-inner">
+                    <div class="user-profile">
+
+                        <img class="img-fluid rounded-circle" th:src="${'/foto/usuario/'+ session.usuariosession.id}" alt="">
+
+                        <div>
+                            <p th:text="${session.usuariosession.nombre}" ></p> 
+                            <a href="/mostrarUsuario">Mi perfil</a>
+                            <br>
+                            <a href="/Formulario-Usuario">Completa tus datos</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="user-profile">
+                        <img src="css/comentario-alt.png">
+                        <div>
+                            <p>Dejanos tu opinión</p>
+                            <a href="#">Ayudanos a seguir mejorando</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="settings-links">
+                        <img src="css/ajustes.png" class="settings-icon">
+                        <a href="#">Ajustes y privacidad <img src="css/angulo-derecho.png" width="10px "></a>
+                    </div>
+                    <div class="settings-links">
+                        <img src="css/interrogatorio.png" class="settings-icon">
+                        <a href="#">Ayuda y soporte <img src="css/angulo-derecho.png" width="10px "></a>
+                    </div>
+                    <div class="settings-links">
+                        <img src="css/energia.png" class="settings-icon">
+                        <a href="/logout">Cerrar sesión <img src="css/angulo-derecho.png" width="10px "></a>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </nav>
+
+
+        <div class="container">
+            <!----left-sidebar--->
+
+            <div class="left-sidebar">
+                <div class="imp-links">
+                    <a href="#"><img src="css/job-seeker.png">Busqueda Laboral</a>
+                    <a href="#"><img src="css/list.png">categorias</a>
+                    <a href="#"><img src="css/map.png">Buscar por Provincias</a>
+                </div>
+
+                <br>
+                <div class="imp-baner-img">
+                    <img src="css/mili1.png">
+                    <img src="css/mili2.png">
+                    <img src="css/mili3.png">
+                    <img src="css/mili4.png">
+                    <img src="css/mili5.png">    
+                </div>
+
+
+            </div>
+            <!-------main-content-------->
+
+            <div class="main-content">
+                <div class="write-post-container">
+                    <div class="user-profile">
+
+                        <!--<img  class="img-fluid rounded-circle" th:src="@{/foto/usuario/8eb28b12-00ea-42c0-a04c-9dde585b6c05}" >se le agrega foto cargo del perfil-->
+
+                        <img class="img-fluid rounded-circle" th:src="${'/foto/usuario/'+ session.usuariosession.id}" alt="">
+
+
+                        <img th:if="${session.usuariosession.foto  == null}" class="img-fluid rounded-circle" src="css/logomark.png" alt="">
+                        <div>
+                            <p th:text="${session.usuariosession.nombre}"> </p>
+                            <small>publica tu empleo aquí</small>
+                        </div>
+                    </div>
+
+                    <form th:action="@{/cargarPublicacion}" method = "POST" enctype="multipart/form-data">
+                        <div class="post-container">
+                            <fieldset class="grupo">
+                                <div class="campo">
+                                    <label for="titulo"><strong>Título</strong></label>
+                                    <input type="text" name="titulo" >
+                                </div>
+
+                                <div class="campo">
+                                    <label for="descripcion"><strong>Descripción</strong></label>
+                                    <input type="text" name="descripcion">  
+                                </div>
+
+                                <div class="campo">
+                                    <label for="precio"><strong>Precio</strong></label>
+                                    <input type="number" name="precio" placeholder="$">
+                                </div>
+
+
+
+                                <select type="text" name="provincia" id="provincia" >   
+                                    <option selected disable value="">Seleccionar provincia</option>  
+                                    <option th:each ="provincia: ${provincias}" th:value="${provincia}"th:text="${provincia.nombre}" ></option> 
+                                </select>
+                                <hr>
+                                <select type="text" name="oficio" id="oficio">
+                                    <option selected disable value="">Seleccionar oficio</option>      
+                                    <option th:each ="oficio: ${oficios}" th:value="${oficio}" th:text="${oficio.nombre}"></option> 
+                                </select>
+                            </fieldset>  
+                            <hr>
+                            <input type="hidden" class="form-control" name="idUsuario" placeholder="ID" th:value="${session.usuariosession.id}"/>
+
+
+
+                            <div class="file-select" id="src-file1" >
+                                <input type="file" aria-label="Archivo" name="archivo">
+                            </div>
+                            <div class="file-select" id="src-file2" >
+                                <input type="file" name="src-file2" aria-label="Archivo">
+                            </div>
+                            <div class="add-post-links">
+                                <button type="submit" class="btn btn-primary">Publicar</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <!--<tr th:each="ment : ${#lists.sort(mentor)}">-->
+                <div class="post-container" th:each="publicacion : ${publicaciones}">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img class="img-fluid rounded-circle" th:src="${'/foto/usuario/'+ publicacion.usuario.id}" alt="">
+
+                            <div>
+                                <p th:text="${publicacion.usuario.nombre}">Nombre</p>
+                                <span th:text="${publicacion.fechaAltabaja}"></span>
+
+
+                            </div>
+                        </div>
+                        <a href="#"><img src=""></a>
+                        <!--boton-->
+                    </div>
+
+                    <div class="titulo">
+                        <h1 class="post-text" th:text="${publicacion.titulo}" ></h1> 
+                    </div>
+
+                    <div class="lista-datos">
+                        <img src="css/maletin.png"> 
+                        <p class="post-text" th:text="${publicacion.oficio}" style="text-align: left" > </p>  
+
+                        <img src="css/ubicacionMili.png"> 
+                        <p class="post-text" th:text="${publicacion.provincia}" style="text-align: left"> </p> 
+                        
+                        <img src="css/signoPeso.png"> 
+                        <p class="post-text" th:text="${publicacion.precio}" style="text-align: left">
+                    </div>
+
+                    <p class="post-text" th:text="${publicacion.descripcion}">
+
+
+
+
+                        <a href="#">#Fullstack</a> <a href="#">#Back end</a> <a href="#">#Front end</a>
+                    </p>
+                    <!--ACA SE PONE LA FOTO DE LA PUBLICACION-->
+
+                    <img  class="post-img" th:src="${'/foto/publicacion/'+ publicacion.id}" alt=""> 
+
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div><img src="css/like.png"> 450</div>
+                            <div><img src="css/comments.png"> 270</div>
+                            <div><img src="css/next.png"> 22</div>
+                        </div>
+
+                        <div class="post-profile-icons">
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div><button type="button" class="load-more-btn">cargar más</button>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+            <!--------right-sidebar--------->
+
+            <div class="right-sidebar">
+                <div class="imp-links">
+                    <a href="#"><img src="css/relacion-publica (1).png"> Publicaciones</a>
+                    <a href="#"><img src="css/cronograma.png">Mis Publicaciones</a> 
+
+                </div>
+                <div class="text-job">
+                    <h2>Somos <br> <span class="color-acento"> Job Solutions</span></h2>
+                    <p>Una plataforma enfocada en ofrecer la solución a encontrar tu empleo ideal el cual resalte tus más grandes habilidades.</p>
+                </div>
+            </div>
+        </div>
+        <!-----Cierra los contenedores-->
+
+
+
+
+        <footer>
+            <div class="container">
+                <p>&copy;job positions Js 2022</p>
+            </div>
+        </footer>
+
+        <script>
+
+
+            var settingsmenu = document.querySelector(".settings-menu");
+
+            function settingsMenuToggle() {
+            settingsmenu.classList.toggle("settings-menu-height");
+
+            }
+
+
+
+
+
+        </script>
+
+
+
+
+
+    </body>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+</html>

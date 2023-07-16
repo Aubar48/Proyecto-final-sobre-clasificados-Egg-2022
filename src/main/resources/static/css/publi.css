@@ -1,0 +1,552 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+:root {
+    --body-color: #efefef;
+    --nav-color: #718ace;
+    --bg-color: #fff;
+}
+
+
+
+body {
+
+    background: var(--body-color);
+    transition: background 0.3s  ;
+
+}
+
+
+nav {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--nav-color);
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+
+
+}
+
+.logo {
+
+    width: 160px;
+    margin-right: 45px;
+
+
+}
+
+.nav-left,
+.nav-right {
+
+    display: flex;
+    align-items: center;
+
+}
+
+
+.nav-left ul li {
+
+    list-style: none;
+    display: inline-block;
+}
+
+
+
+.nav-left ul li img {
+
+    width: 25px;
+    margin: 0 15px;
+
+
+
+}
+
+.nav-user-icon img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.nav-user-icon {
+    margin-left: 30px;
+
+
+}
+
+.search-box {
+    background: #efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+}
+
+.search-box img {
+
+    width: 18px;
+
+}
+
+.search-box input {
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    border: 0;
+}
+
+.online {
+
+    position: relative;
+
+}
+
+.online::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.container {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+
+}
+
+
+.left-sidebar {
+
+
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+
+}
+
+
+.right-sidebar {
+
+    flex-basis: 25%;
+    position: sticky;
+    top: 70px;
+    align-self: flex-start;
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+
+}
+.text-job h2{
+    font-size:30px;
+    font-family: sans-serif;
+    color: #59429d;
+    text-align: center;
+}
+
+.text-job p{
+    font-size:20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.main-content {
+    flex-basis: 47%;
+
+
+}
+
+.imp-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width: fit-content;
+}
+
+.imp-links a img {
+    width: 25px;
+    margin-right: 15px;
+}
+
+.imp-links a:last-child {
+    color: #1876f2;
+
+}
+
+.imp-links {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.write-post-container {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+}
+.titulo h1{
+    font-family: sans-serif;
+    font-size: 20px;
+    color:#626262;
+    
+ 
+}
+.lista-datos img{
+    float: left;
+    padding: 3px;
+}
+
+
+.user-profile {
+    display: flex;
+    align-items: center;
+ 
+}
+
+
+.user-profile img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+.user-profile p {
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: #626262;
+
+
+}
+
+.user-profile small {
+    font-size: 12px;
+}
+
+
+.user-profile small img {
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-container {
+    padding-left: 55px;
+    padding-top: 20px;
+}
+
+
+  .campo {
+    margin-bottom: 1em;
+    
+}
+
+/* Elementos de clase "campo" de tag <label> */
+.campo label {
+    margin-bottom: 0.2em;
+    color: #59429d;
+    display: block;
+}
+
+/* Elementos de classe "campo" y "grupo" de tag <fieldset> */
+fieldset.grupo .campo {
+    float:  left;
+    margin-right: 1em;
+}
+
+/* Elementos de clase "campo"  tags <input> con atributo text y email, de tag <select> e da tag <textarea>*/
+.campo input[type="text"], .campo input[type="number"], .campo select, .campo textarea .campo {
+    padding: 0.2em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: block;
+}
+
+/* Elementos de clase "campo" de tag <select> e <option>*/
+.campo select option {
+    padding-right: 1em;
+}
+
+/* Elemento de clase "campo" con tag <input>, <select> e <textarea> "focus"*/
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    background: #E0E0F8;
+}
+
+.grupo:before, .grupo:after {
+    display: table;
+}
+
+
+.grupo:after {
+    clear: both;
+}
+
+
+.file-select {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .file-select::before {
+    background-color: #5678EF;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Seleccionar'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+  }
+
+
+#src-file1::before {
+    content: 'Subir foto';
+  }
+  
+  #src-file2::before {
+    content: 'Subir video';
+  } 
+
+
+.post-container button {
+    border-radius: 100px;
+    padding: 10px;
+    width: 100%;
+}
+
+.add-post-links {
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.add-post-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #626262;
+    margin-right: 30px;
+    font-size: 13px;
+}
+
+.add-post-links a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.post-container {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin: 20px 0;
+}
+
+.user-profile span {
+    font-size: 13px;
+    color: #9a9a9a;
+}
+
+.post-text {
+    color: #9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+
+}
+
+.post-text span {
+    color: #626262;
+    font-weight: 500;
+}
+
+.post-text a {
+    color: #1876f2;
+    text-decoration: none;
+}
+
+.post-img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.post-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.activity-icons div img {
+    width: 18px;
+    margin-right: 10px;
+
+
+}
+
+.activity-icons div {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.post-profile-icons {
+    display: flex;
+    align-items: center;
+}
+
+.post-row a img {
+    width: 15px;
+    margin-right: 10px;
+}
+
+.load-more-btn {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #9a9a9a;
+    color: #626262;
+    background: transparent;
+    border-radius: 4px;
+
+}
+
+
+footer {
+    background-color: rgb(233, 230, 230);
+}
+
+footer p {
+
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100);
+
+}
+
+footer .container {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-menu {
+    position: absolute;
+    width: 90%;
+    max-width: 350px;
+    background: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 108px;
+    right: 5%;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+
+.settings-menu-height {
+    max-height: 450px;
+}
+
+.user-profile a {
+    font-size: 12px;
+    color: #1876f2;
+    text-decoration: none;
+}
+
+.settings-menu-inner {
+    padding: 20px;
+}
+
+.settings-menu hr {
+    border: 0;
+    height: 1px;
+    background: #9a9a9a;
+    margin: 15px 0;
+}
+
+.settings-links {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+.settings-links .settings-icon {
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.settings-links a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #626262;
+}
+
+#dark.btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s,  background 0.5s      ;
+}
+
+#dark.btn span{
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#dark.btn.dark-btn-on {
+    padding-left: 23px ;
+    background: #000;
+} 
